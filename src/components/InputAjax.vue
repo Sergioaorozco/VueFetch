@@ -15,7 +15,7 @@ export default {
             e.preventDefault();
             const inputValue = document.getElementById("book-search").value;
             try {
-              await fetch(`${baseUrl}?q=${inputValue}`)
+              await fetch(`${baseUrl}?q=${inputValue}?limit=10`)
                   .then(res => res.json())
                   .then(data => this.vueLibrary = data)
             } catch(err) {
